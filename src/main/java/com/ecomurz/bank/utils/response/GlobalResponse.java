@@ -1,12 +1,14 @@
 package com.ecomurz.bank.utils.response;
 
-import lombok.Builder;
-import lombok.Getter;
-import org.springframework.util.StringUtils;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import lombok.*;
 
-@Builder
-@Getter
-public class GlobalResponse {
-    Integer status;
-    String message;
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
+public class GlobalResponse<T> {
+    private Integer status;
+    private String message;
+    private T result;
 }

@@ -8,7 +8,7 @@ import java.util.Optional;
 public interface UserService {
     UserDetailsService userDetailsService();
 
-    void save(Users user);
+    Users save(Users user);
 
     Optional<Users> findByEmail(String email);
 }
